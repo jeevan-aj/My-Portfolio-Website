@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+@keyframes profile__animate {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.home__img {
+  background: url(https://www.stefantopalovic.com/static/media/pfp_webp.f334283842f7b24cafd1.webp);
+  background-repeat: no-repeat;
+  object-fit: contain;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 1);
+  justify-self: center;
+  width: 19rem;
+  height: 19rem;
+  animation: profile__animate 3s ease-in-out infinite 1s;
+  overflow: hidden;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.home__imges {
+  background: url(../../Images/shaikh.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: contain;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px rgba(12, 12, 12, 0.3);
+  justify-self: center;
+  width: 16rem;
+  height: 16rem;
+  animation: profile__animate 3s ease-in-out infinite 1s;
+}
+
+.icon-item {
+  position: absolute;
+  left: -1000px;
+  animation: moveAnimation 2s ease-in-out forwards;
+}
+
+@keyframes moveAnimation {
+  to {
+    position: relative;
+    left: 0;
+    opacity: 1;
+  }
+}
+.icon {
+  transition: transform 1s ease-in-out;
+  z-index: 1;
+  position: relative;
+}
+
+.icon-item:hover .icon {
+  z-index: 4;
+  transform: scale(2);
+}
+
+.title {
+  position: absolute;
+  z-index: 4;
+  top: 4rem;
+  width: 10rem;
+  left: -3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.icon-item:hover .title {
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.background {
+  display: none;
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 20%;
+  z-index: 2;
+  padding: 1rem;
+  transition: transform 1s ease-in-out;
+  transform-origin: center;
+}
+@keyframes bg {
+  0% {
+    transform: scale(0);
+    left: 60%;
+    top: 40%;
+    bottom: 60%;
+  }
+  100% {
+    transform: scale(1);
+    left: -3.9rem;
+    top: -3rem;
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+.icon-item:hover .background {
+  display: block;
+  z-index: 3;
+  animation: bg 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.tech {
+  z-index: 1 !important;
+  animation: colorchange 10s forwards;
+}
+
+@keyframes colorchange {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: transparent !important;
+  }
+}
+
+.icon-items.active .icon {
+  z-index: 4;
+  transform: scale(1.5);
+  margin-right: 1rem;
+  margin-left: 0.6rem;
+}
+.icon-items.active .icontext {
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.closebutton:hover {
+  transform: scale(1.2);
+}
+
+.HeroName {
+  line-height: 66px;
+  font-size: 3.6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+}
+.HeroParagraph {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.wave-emoji {
+  display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+  font-size: 1em; /* Adjust size as needed */
+}
+
+.Data {
+  width: calc(100% / 2);
+}
+
+@media (max-width: 1150px) {
+ 
+  .HeroParagraph {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width:500px){
+  .HeroName{
+    font-size: 36px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .HeroParagraph{
+    font-size: 12px;
+  }
+}
